@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/vpduc/Downloads/Compressive/apache-activemq-5.16.1/activemq-all-5.16.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/vpduc/Desktop/Trainning/wildfly-23.0.0.Final/jboss-modules.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/vpduc/Desktop/Trainning/wildfly-23.0.0.Final/bin/client/jboss-client.jar" sourcepath="C:/Users/vpduc/.m2/repository/org/wildfly/wildfly-client-all/23.0.0.Final/wildfly-client-all-23.0.0.Final-sources.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
