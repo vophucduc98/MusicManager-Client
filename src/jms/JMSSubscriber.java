@@ -9,7 +9,7 @@ import javax.management.MalformedObjectNameException;
 import javax.swing.JFrame;
 
 import ducvp.frames.MainFrame;
-
+//Listening for JMS message
 public class JMSSubscriber implements MessageListener{
 	public MainFrame mainFrame;
 	

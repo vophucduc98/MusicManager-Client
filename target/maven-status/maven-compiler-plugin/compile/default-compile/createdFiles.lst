@@ -1,2 +1,14 @@
-service\SongDAOMbean.class
+ducvp\frames\MainFrame$5.class
+ducvp\frames\AddFrame$1.class
+ducvp\frames\MainFrame.class
+utils\JMXUtils.class
+ducvp\frames\MainFrame$4.class
+model\SongDTO.class
 ducvp\main\App.class
+ducvp\frames\MainFrame$2.class
+service\SongDAOMbean.class
+ducvp\frames\MainFrame$1.class
+jms\JMSSubscriber.class
+ducvp\frames\AddFrame$2.class
+ducvp\frames\MainFrame$3.class
+ducvp\frames\AddFrame.class

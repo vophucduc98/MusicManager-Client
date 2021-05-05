@@ -20,11 +20,11 @@ public class JMXUtils {
 	static MBeanServerConnection mbsc;
 	
 	public SongDAOMbean getProxy() throws IOException, MalformedObjectNameException {
-//		Create an RMI connector client and " + "connect it to the RMI connector server
+//		Create an RMI connector client and connect it to the RMI connector server
 		String urlString = System.getProperty("jmx.service.url", "service:jmx:remote+http://192.168.107.49:8080");
 		JMXServiceURL url = new JMXServiceURL(urlString);
 		Map<String, String[]> env = new HashMap<String, String[]>();
-		String[] credentials = { "vpduc", "vpduc" };
+		String[] credentials = { "vpduc", "123456789" };
 		env.put(JMXConnector.CREDENTIALS, credentials);
 		if (jmxc == null) {
 			jmxc = JMXConnectorFactory.connect(url);

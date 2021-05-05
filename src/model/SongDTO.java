@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+// Song Data Tranfer Object
 public class SongDTO implements Serializable{
 	/**
 	 * 

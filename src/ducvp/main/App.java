@@ -52,27 +52,22 @@ public class App {
 		MessageConsumer client = session.createConsumer(topic);
 		client.setMessageListener(new JMSSubscriber(mainFrame));
 		connection.start();
-//		connection.close();
 	}
 
 	public synchronized void addSong(SongDTO dto) {
-		//getProxy();
 		mbeanProxy.add(dto);
 	}
 
 	public List<SongDTO> getSongs() throws MalformedObjectNameException, IOException {
-		//getProxy();
 		return mbeanProxy.findAll();
 	}
 
 	public synchronized void updateSong(SongDTO dto) throws MalformedObjectNameException, IOException {
-		//getProxy();
 		mbeanProxy.update(dto);
 
 	}
 
 	public synchronized void deleteSong(int id) {
-		//getProxy();
 		mbeanProxy.delete(id);
 
 	}
