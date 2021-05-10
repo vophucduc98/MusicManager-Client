@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import ducvp.main.App;
-import model.SongDTO;
+import model.SongVO;
 import utils.JMXUtils;
 
 public class AddFrame extends JFrame {
@@ -99,12 +99,12 @@ public class AddFrame extends JFrame {
 				JMXUtils utils = new JMXUtils();
 				try {
 					App app = new App(utils.getProxy());
-					SongDTO dto = new SongDTO();
-					dto.setName(txtName.getText());
-					dto.setArtist(txtArtist.getText());
-					dto.setDuration(Integer.parseInt(txtDuration.getText()));
-					app.addSong(dto);
-				} catch (MalformedObjectNameException | IOException e1) {
+					SongVO vo = new SongVO();
+					vo.setName(txtName.getText());
+					vo.setArtist(txtArtist.getText());
+					vo.setDuration(Integer.parseInt(txtDuration.getText()));
+					app.addSong(vo);
+				} catch (MalformedObjectNameException | IOException | InterruptedException e1) {
 					e1.printStackTrace();
 				}
 

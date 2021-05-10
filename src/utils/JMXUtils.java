@@ -12,7 +12,7 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
-import service.SongDAOMbean;
+import api.SongDAOMbean;
 
 public class JMXUtils {
 	static SongDAOMbean mbeanProxy;

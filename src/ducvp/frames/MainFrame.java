@@ -20,7 +20,6 @@ import javax.management.MalformedObjectNameException;
 import javax.naming.NamingException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,7 +35,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import ducvp.main.App;
-import model.SongDTO;
+import model.SongVO;
 import utils.JMXUtils;
 
 @SuppressWarnings("serial")
@@ -110,7 +109,11 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int id = Integer.parseInt((String) table.getValueAt(table.getSelectedRow(), 0));
-				app.deleteSong(id);
+				try {
+					app.deleteSong(id);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -127,7 +130,7 @@ public class MainFrame extends JFrame {
 	}
 
 	public void updateTable() throws MalformedObjectNameException, IOException, JMSException {
-		List<SongDTO> list = new ArrayList<SongDTO>();
+		List<SongVO> list = new ArrayList<SongVO>();
 		list = app.getSongs();
 		table.setRowHeight(40);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -163,10 +166,10 @@ public class MainFrame extends JFrame {
 				String name = (String) table.getValueAt(e.getFirstRow(), 1);
 				String artist = (String) table.getValueAt(e.getFirstRow(), 2);
 				int duration = Integer.valueOf((String) table.getValueAt(e.getFirstRow(), 3));
-				SongDTO dto = new SongDTO(id, name, artist, duration);
+				SongVO vo = new SongVO(id, name, artist, duration);
 				try {
-					app.updateSong(dto);
-				} catch (MalformedObjectNameException | IOException e1) {
+					app.updateSong(vo);
+				} catch (MalformedObjectNameException | IOException | InterruptedException e1) {
 					e1.printStackTrace();
 				}
 

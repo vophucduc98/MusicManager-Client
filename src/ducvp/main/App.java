@@ -16,12 +16,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
-
+import api.SongDAOMbean;
 import ducvp.frames.MainFrame;
 import jms.JMSSubscriber;
-import model.SongDTO;
-import service.SongDAOMbean;
+import model.SongVO;
 
 public class App {
 	SongDAOMbean mbeanProxy;
@@ -54,20 +52,20 @@ public class App {
 		connection.start();
 	}
 
-	public synchronized void addSong(SongDTO dto) {
-		mbeanProxy.add(dto);
+	public synchronized void addSong(SongVO vo) throws InterruptedException {
+		mbeanProxy.add(vo);
 	}
 
-	public List<SongDTO> getSongs() throws MalformedObjectNameException, IOException {
+	public List<SongVO> getSongs() throws MalformedObjectNameException, IOException {
 		return mbeanProxy.findAll();
 	}
 
-	public synchronized void updateSong(SongDTO dto) throws MalformedObjectNameException, IOException {
-		mbeanProxy.update(dto);
+	public synchronized void updateSong(SongVO vo) throws MalformedObjectNameException, IOException, InterruptedException {
+		mbeanProxy.update(vo);
 
 	}
 
-	public synchronized void deleteSong(int id) {
+	public synchronized void deleteSong(int id) throws InterruptedException {
 		mbeanProxy.delete(id);
 
 	}
